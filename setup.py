@@ -23,7 +23,7 @@ setup(
     url="https://github.com/vtpl1/temp",
     packages=find_packages(),
     entry_points={"console_scripts": ["temp=temp.cli:main"],},
-    install_requires=[],
+    install_requires=["pyyaml==5.3.1"],
     extras_require={
         "test": ["pytest", "flake8"],
         "develop": [
@@ -37,6 +37,7 @@ setup(
         ],
     },
     tests_require=["pytest", "flake8"],
+    include_package_data=True,
     python_requires=">=3.6.0",
     classifiers=[
         "Development Status :: 5 - Production/Stable",

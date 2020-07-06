@@ -1,47 +1,42 @@
-"""Setup file for $project_name python module"""
+"""Setup file for $pname python module"""
 from setuptools import find_packages, setup
 from os import path
 
-from $project_name.$project_name_main import __version__
+exec(open("$pname/_version.py").read())
 
-
-__version__ = __version__()
 here = path.abspath(path.dirname(__file__))
 
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+with open(path.join(here, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
-tests_require = [
-    "pytest",
-    "flake8"
-]
-
-extras = {
-    "test": tests_require
-}
 
 setup(
-    name="$project_name",
+    name="$pname",
     version=__version__,
-    author="Jeff Yang",
-    author_email="ydc.jeff@gmail.com",
+    author="Monotosh Das",
+    author_email="monotosh.das@videonetics.com",
     description="🚀 A CLI tool for scaffolding any Python Projects 🚀",
     long_description=long_description,
     long_description_content_type="text/markdown",
     keywords="scaffold python project cli",
     license="MIT",
-    url="https://github.com/vtpl1/$project_name",
+    url="https://github.com/vtpl1/$pname",
     packages=find_packages(),
-    entry_points={
-        "console_scripts": [
-            "$project_name=$project_name.$project_name_main:cli"
+    entry_points={"console_scripts": ["$pname=$pname.cli:main"],},
+    install_requires=[],
+    extras_require={
+        "test": ["pytest", "flake8"],
+        "develop": [
+            "yapf",
+            "bump2version",
+            "mypy",
+            "pylama",
+            "pylint",
+            "pycodestyle",
+            "pipenv-setup",
         ],
     },
-    install_requires=[
-        "requests"
-    ],
-    extras_require=extras,
-    tests_require=tests_require,
+    tests_require=["pytest", "flake8"],
     python_requires=">=3.6.0",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -53,6 +48,6 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
-        "Topic :: Utilities"
+        "Topic :: Utilities",
     ],
 )

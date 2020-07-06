@@ -13,10 +13,8 @@ pycodestyle = "*"
 pipenv-setup = "*"
 pytest = "*"
 pyinstaller = "*"
-rope = "*"
 
 [packages]
-PyYaml = "*"
 
 [requires]
 python_version = "3.6"
