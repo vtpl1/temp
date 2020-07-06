@@ -5,6 +5,7 @@ import logging.config
 import os
 import shutil
 import subprocess
+import sys
 
 import yaml
 
@@ -28,6 +29,24 @@ def setup_logging(default_path='logging.yaml', default_level=logging.INFO, env_k
 
 
 LOGGER = logging.getLogger(__name__)
+
+
+def main1():
+    frozen = 'not'
+    if getattr(sys, 'frozen', False):
+        # we are running in a bundle
+        frozen = 'ever so'
+        bundle_dir = sys._MEIPASS
+        print('hhhhhhhhhh')
+    else:
+        # we are running in a normal Python environment
+        bundle_dir = os.path.dirname(os.path.abspath(__file__))
+    print('we are', frozen, 'frozen')
+    print(os.listdir(bundle_dir + '/templates'))
+    print('bundle dir is', bundle_dir)
+    print('sys.argv[0] is', sys.argv[0])
+    print('sys.executable is', sys.executable)
+    print('os.getcwd is', os.getcwd())
 
 
 def main():
