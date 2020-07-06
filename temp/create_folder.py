@@ -1,6 +1,5 @@
 import logging
 import os
-import pkgutil
 import sys
 
 LOGGER = logging.getLogger(__name__)
