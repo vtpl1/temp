@@ -38,6 +38,23 @@ setup(
     },
     tests_require=["pytest", "flake8"],
     include_package_data=True,
+    data_files=[
+        ('templates',[
+            'templates/__init__.py.template',
+            'templates/__main__.py.template',
+            'templates/_version.py.template',
+            'templates/.bumpversion.cfg.template',
+            'templates/.gitignore.template',
+            'templates/build.sh.template',
+            'templates/cli.py.template',
+            'templates/LICENSE.template',
+            'templates/logging.yaml.template',
+            'templates/Pipfile.template',
+            'templates/README.md.template',
+            'templates/setup.cfg.template',
+            'templates/setup.py.template',
+            'templates/temp.json']),
+    ],
     python_requires=">=3.6.0",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
