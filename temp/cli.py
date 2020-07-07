@@ -52,6 +52,16 @@ def main():
     temp.create_project(output_dir_path, pname)
 
     LOGGER.info('Successfully created project :: {}'.format(pname))
+    LOGGER.info('Next steps 1) :: cd {}'.format(pname))
+    LOGGER.info('           2) :: pipenv install --dev')
+    LOGGER.info('           3) :: pipenv shell')
+    LOGGER.info('           4) :: nano /etc/hosts')
+    LOGGER.info('                 add "192.168.1.186    pypi.videonetics.com"')
+    LOGGER.info('           5) :: nano ~/.pypirc')
+    LOGGER.info('                 write ::\n\n[distutils]\nindex-servers =\n  vtpl\n\n[vtpl]\nrepository: http://pypi.videonetics.com:8080\nusername:vtpl\npassword:Vtpl@123\n\n')
+    LOGGER.info('           6) :: . build.sh')
+    LOGGER.info('The exexutable will be available at {0}/dist with the name {0}'.format(pname))
+
 
 
 if __name__ == "__main__":

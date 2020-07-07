@@ -25,3 +25,4 @@ temp/cli.py
 
 pip3 install -e .
 # pip3 install --trusted-host pypi.videonetics.com -i http://pypi.videonetics.com:8080/simple/ temp
+# pip3 install --trusted-host pypi.videonetics.com -U -i http://pypi.videonetics.com:8080/simple/ temp
