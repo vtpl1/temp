@@ -1,1 +1,2 @@
+include templates/pname/*
 include templates/*

@@ -15,7 +15,7 @@ setup(
     version=__version__,
     author="Monotosh Das",
     author_email="monotosh.das@videonetics.com",
-    description="🚀 A CLI tool for scaffolding any Python Projects 🚀",
+    description="🚀 Python Project for $pname 🚀",
     long_description=long_description,
     long_description_content_type="text/markdown",
     keywords="scaffold python project cli",
@@ -23,7 +23,7 @@ setup(
     url="https://github.com/vtpl1/$pname",
     packages=find_packages(),
     entry_points={"console_scripts": ["$pname=$pname.cli:main"],},
-    install_requires=[],
+    install_requires=["pyyaml==5.3.1"],
     extras_require={
         "test": ["pytest", "flake8"],
         "develop": [
@@ -37,6 +37,9 @@ setup(
         ],
     },
     tests_require=["pytest", "flake8"],
+    include_package_data=True,
+    package_data={
+    },
     python_requires=">=3.6.0",
     classifiers=[
         "Development Status :: 5 - Production/Stable",

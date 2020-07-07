@@ -1,4 +1,4 @@
-"""Main file for temp."""
+"""Main file for $pname."""
 import argparse
 import logging
 import logging.config
@@ -8,7 +8,7 @@ import subprocess
 
 import yaml
 
-import temp
+import $pname
 
 
 def setup_logging(default_path='logging.yaml', default_level=logging.INFO, env_key='LOG_CFG'):
@@ -37,10 +37,10 @@ def main():
     group.add_argument('project_name', help='Project name to create')
 
     group = parser.add_argument_group('Options')
-    group.add_argument('-v', '--version', action='version', version=temp.__version__, help='Output version number')
+    group.add_argument('-v', '--version', action='version', version=$pname.__version__, help='Output version number')
     group.add_argument('-o', '--output_dir', help='Output directory path', default='.')
 
-    LOGGER.info('Running Version :: {}'.format(temp.__version__))
+    LOGGER.info('Running Version :: {}'.format($pname.__version__))
 
     # pipenv install --dev yapf bump2version mypy pylama pylint
     args = parser.parse_args()
@@ -48,9 +48,6 @@ def main():
     setup_logging()
 
     output_dir_path = os.path.join(args.output_dir, pname)
-
-    # create project with project name
-    temp.create_project(output_dir_path, pname)
 
     LOGGER.info('Successfully created project :: {}'.format(pname))
 

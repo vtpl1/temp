@@ -3,6 +3,11 @@ name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
 
+[[source]]
+name = "vtpl"
+url = "http://pypi.videonetics.com:8080"
+verify_ssl = false
+
 [dev-packages]
 yapf = "*"
 bump2version = "*"
