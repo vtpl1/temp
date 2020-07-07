@@ -9,9 +9,8 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
-
 setup(
-    name="temp",
+    name="videonetics.temp",
     version=__version__,
     author="Monotosh Das",
     author_email="monotosh.das@videonetics.com",

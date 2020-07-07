@@ -4,6 +4,7 @@ bump2version patch --allow-dirty
 pipenv-setup sync
 # python setup.py bdist_wheel
 python setup.py bdist_wheel upload -r vtpl
+#python setup.py bdist_wheel
 #python -m PyInstaller --name temp temp/cli.py
 python -m PyInstaller --onefile --name temp \
 --add-data 'templates/build.sh.template:templates' \
